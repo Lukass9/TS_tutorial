@@ -6,19 +6,20 @@ async function getData() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    throw new Error("filed to fetch data");
   }
 
   return res.json();
 }
 
 const PostList = async () => {
-  const data: PostProps[] = await getData();
-  return (
-    <div className="postList">
-      {/* <PostCard title="post title" body="post desc" /> */}
+  const data = await getData();
 
-      {data.map((post) => (
+  return (
+    <div className='postList'>
+      {/* <PostCard title='post title' body='post desc' /> */}
+
+      {data.map((post: PostProps) => (
         <PostCard key={post.id} {...post} />
       ))}
     </div>
