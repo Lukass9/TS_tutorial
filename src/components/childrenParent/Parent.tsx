@@ -1,7 +1,12 @@
 import React from "react";
 
-const Parent = () => {
-  return <div>Parent</div>;
+const Parent = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div>
+      <h1>This is the parents</h1>
+      {children}
+    </div>
+  );
 };
 
 export default Parent;

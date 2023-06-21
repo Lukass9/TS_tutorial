@@ -13,13 +13,13 @@ async function getData() {
 }
 
 const PostList = async () => {
-  const data = await getData();
+  const data: PostProps[] = await getData();
 
   return (
     <div className='postList'>
       {/* <PostCard title='post title' body='post desc' /> */}
 
-      {data.map((post: PostProps) => (
+      {data.map((post) => (
         <PostCard key={post.id} {...post} />
       ))}
     </div>
